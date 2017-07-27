@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DelimitedDataParser</id>
+        <version>4.0.0</version>
+        <authors>Enable</authors>
+        <owners>Enable</owners>
+        <licenseUrl>https://raw.githubusercontent.com/EnableSoftware/DelimitedDataParser/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/EnableSoftware/DelimitedDataParser</projectUrl>
+        <iconUrl>https://github.com/EnableSoftware.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>C# library for parsing and exporting tabular data in delimited format (e.g. CSV).</description>
+        <summary />
+        <copyright>Copyright 2016</copyright>
+        <tags>CSV parser exporter delimited</tags>
+    </metadata>
+    <files>
+        <file src="lib\DelimitedDataParser.dll" target="lib\DelimitedDataParser.dll" />
+        <file src="lib\DelimitedDataParser.xml" target="lib\DelimitedDataParser.xml" />
+    </files>
+</package>
