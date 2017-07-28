@@ -18,9 +18,7 @@ namespace Enable.Common
                 return;
             }
 
-            var isDefined = Enum.IsDefined(value.GetType(), value);
-
-            if (!isDefined)
+            if (!Enum.IsDefined(value.GetType(), value))
             {
                 throw new ArgumentOutOfRangeException(paramName);
             }
@@ -34,6 +32,17 @@ namespace Enable.Common
             if (!condition)
             {
                 throw new ArgumentOutOfRangeException(paramName);
+            }
+        }
+
+        /// <summary>
+        /// Throws an exception if argument is null.
+        /// </summary>
+        public static void IsNotNull(object argument, string paramName)
+        {
+            if (argument == null)
+            {
+                throw new ArgumentNullException(paramName);
             }
         }
 
