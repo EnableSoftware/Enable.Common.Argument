@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{6FB2C046-4744-4146-8BFD-3E85308EC02F}"
-	ProjectSection(SolutionItems) = preProject
-		nuget\Enable.Common.Argument.nuspec = nuget\Enable.Common.Argument.nuspec
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B148408C-C362-4B8C-8892-DB075E781CE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9178269F-0E3D-4CDF-93FC-4C80CFCFD6EE}"
