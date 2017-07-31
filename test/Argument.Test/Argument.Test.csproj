@@ -62,7 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArgumentTests.cs" />
+    <Compile Include="ArgumentIsEnumDefinedTests.cs" />
+    <Compile Include="ArgumentIsNotNullOrWhiteSpaceTests.cs" />
+    <Compile Include="ArgumentIsNotNullOrEmptyTests.cs" />
+    <Compile Include="ArgumentIsInRangeTests.cs" />
+    <Compile Include="ArgumentIsNotNullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

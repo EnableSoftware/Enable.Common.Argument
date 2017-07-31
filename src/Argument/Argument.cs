@@ -18,9 +18,11 @@ namespace Enable.Common
                 return;
             }
 
-            if (!Enum.IsDefined(value.GetType(), value))
+            var type = value.GetType();
+
+            if (!Enum.IsDefined(type, value))
             {
-                throw new ArgumentOutOfRangeException(paramName);
+                throw new ArgumentOutOfRangeException(paramName, $"Specified argument was out of the range of valid values for enum '{type.Name}'.");
             }
         }
 
@@ -51,9 +53,14 @@ namespace Enable.Common
         /// </summary>
         public static void IsNotNullOrEmpty(string argument, string paramName)
         {
-            if (string.IsNullOrEmpty(argument))
+            if (argument == null)
             {
                 throw new ArgumentNullException(paramName);
+            }
+
+            if (argument.Length == 0)
+            {
+                throw new ArgumentException("Value cannot be empty.", paramName);
             }
         }
 
@@ -62,9 +69,19 @@ namespace Enable.Common
         /// </summary>
         public static void IsNotNullOrWhiteSpace(string argument, string paramName)
         {
-            if (string.IsNullOrWhiteSpace(argument))
+            if (argument == null)
             {
                 throw new ArgumentNullException(paramName);
+            }
+
+            if (argument.Length == 0)
+            {
+                throw new ArgumentException("Value cannot be empty.", paramName);
+            }
+
+            if (argument.Trim().Length == 0)
+            {
+                throw new ArgumentException("Value cannot be white space.", paramName);
             }
         }
     }
