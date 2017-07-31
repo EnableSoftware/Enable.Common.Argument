@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{6FB2C046-4744-4146-8BFD-3E85308EC02F}"
 	ProjectSection(SolutionItems) = preProject
-		nuget\Enable.Argument.nuspec = nuget\Enable.Argument.nuspec
+		nuget\Enable.Common.Argument.nuspec = nuget\Enable.Common.Argument.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B148408C-C362-4B8C-8892-DB075E781CE1}"
