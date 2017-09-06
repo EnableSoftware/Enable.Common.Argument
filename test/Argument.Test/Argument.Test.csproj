@@ -67,6 +67,7 @@
     <Compile Include="ArgumentIsNotNullOrEmptyTests.cs" />
     <Compile Include="ArgumentIsInRangeTests.cs" />
     <Compile Include="ArgumentIsNotNullTests.cs" />
+    <Compile Include="ArgumentIsWellFormedUriStringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

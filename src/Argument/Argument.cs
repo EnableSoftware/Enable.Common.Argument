@@ -84,5 +84,34 @@ namespace Enable.Common
                 throw new ArgumentException("Value cannot be white space.", paramName);
             }
         }
+
+        /// <summary>
+        /// Throws an exception if the string argument is not a valid URI.
+        /// </summary>
+        public static void IsWellFormedUriString(string uri, string argumentName, UriKind kind = UriKind.Absolute)
+        {
+            if (!Uri.IsWellFormedUriString(uri, kind))
+            {
+                string message;
+
+                switch (kind)
+                {
+                    case UriKind.Absolute:
+                        message = "Specified argument must be a valid absolute URI.";
+                        break;
+
+                    case UriKind.Relative:
+                        message = "Specified argument must be a valid relative URI.";
+                        break;
+
+                    case UriKind.RelativeOrAbsolute:
+                    default:
+                        message = "Specified argument must be a valid URI.";
+                        break;
+                }
+
+                throw new ArgumentException(message, argumentName);
+            }
+        }
     }
 }
