@@ -79,10 +79,15 @@ namespace Enable.Common
                 throw new ArgumentException("Value cannot be empty.", paramName);
             }
 
-            if (argument.Trim().Length == 0)
+            for (int i = 0; i < argument.Length; i++)
             {
-                throw new ArgumentException("Value cannot be white space.", paramName);
+                if (!char.IsWhiteSpace(argument[i]))
+                {
+                    return;
+                }
             }
+
+            throw new ArgumentException("Value cannot be white space.", paramName);
         }
 
         /// <summary>

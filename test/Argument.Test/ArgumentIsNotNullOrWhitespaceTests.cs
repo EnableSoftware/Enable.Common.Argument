@@ -6,12 +6,16 @@ namespace Enable.Common
 {
     public class ArgumentIsNotNullOrWhiteSpaceTests
     {
-        [Fact]
-        public void IsNotNullOrWhiteSpace_DoesNotThrowIfArgumentNotNullOrWhiteSpace()
+        [Theory]
+        [InlineData("foo")]
+        [InlineData("foo bar")]
+        [InlineData(" foo bar")]
+        [InlineData("foo bar ")]
+        [InlineData(" foo bar ")]
+        public void IsNotNullOrWhiteSpace_DoesNotThrowIfArgumentNotNullOrWhiteSpace(string argument)
         {
             // Arrange
             var fixture = new Fixture();
-            string argument = fixture.Create<string>();
 
             try
             {
