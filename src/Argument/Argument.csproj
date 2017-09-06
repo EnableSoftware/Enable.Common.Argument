@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\CustomExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <DocumentationFile>bin\Release\Enable.Common.Argument.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Argument.cs" />
