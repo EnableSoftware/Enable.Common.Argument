@@ -8,8 +8,17 @@ environment:
 
 before_build:
 - cmd: dotnet restore
-- ps: gitversion /l console /output buildserver /updateAssemblyInfo
-- cmd: SET APPVEYOR_BUILD_VERSION = %GitVersion_MajorMinorPatch%
+- ps: gitversion /l console /output buildserver
+- ps: appveyor UpdateBuild -Version "$env:GitVersion_SemVer-$env:GitVersion_BuildMetaData"
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: $(GitVersion_NuGetVersion)
+  package_version: $(GitVersion_NuGetVersion)
+  assembly_version: $(GitVersion_MajorMinorPatch)
+  file_version: $(GitVersion_MajorMinorPatch)
+  informational_version: $(GitVersion_InformationalVersion)
 
 build:
   publish_nuget: true
