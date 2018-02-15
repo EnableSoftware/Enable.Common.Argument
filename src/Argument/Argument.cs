@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Enable.Common
 {
@@ -135,6 +135,5 @@ namespace Enable.Common
         }
 
 #pragma warning restore CA1054 // Uri parameters should not be strings
-
     }
 }

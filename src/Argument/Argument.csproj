@@ -2,6 +2,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard1.0</TargetFramework>
         <CodeAnalysisRuleSet>../../CustomExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
         <Features>IOperation</Features>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
