@@ -1,15 +1,16 @@
 version: x-{build}
-configuration: Release
 image: Visual Studio 2017
+configuration: Release
 
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
-before_build:
-- cmd: dotnet restore
-- ps: gitversion /l console /output buildserver
-- ps: appveyor UpdateBuild -Version "$env:GitVersion_SemVer-$env:GitVersion_BuildMetaData"
+install:
+  - choco install gitversion -pre -y
+  - cmd: dotnet restore
+  - ps: gitversion /l console /output buildserver
+  - ps: appveyor UpdateBuild -Version "$env:GitVersion_SemVer-$env:GitVersion_BuildMetaData"
 
 dotnet_csproj:
   patch: true
