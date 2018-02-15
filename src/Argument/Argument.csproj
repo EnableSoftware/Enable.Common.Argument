@@ -7,7 +7,6 @@
     </PropertyGroup>
     <PropertyGroup>
         <AssemblyName>Enable.Common.Argument</AssemblyName>
-        <AssemblyVersion>2.0.0</AssemblyVersion>
         <Authors>Enable</Authors>
         <Description>Utility methods for .NET that centralise the logic for enforcing argument conditions at runtime.</Description>
         <Copyright>Copyright © Enable</Copyright>

@@ -7,7 +7,6 @@
     </PropertyGroup>
     <PropertyGroup>
         <AssemblyName>Enable.Common.Argument.Tests</AssemblyName>
-        <AssemblyVersion>2.0.0</AssemblyVersion>
         <Authors>Enable</Authors>
         <Copyright>Copyright © Enable</Copyright>
     </PropertyGroup>

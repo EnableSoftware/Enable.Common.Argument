@@ -6,6 +6,9 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
+install:
+  - choco install gitversion.portable -pre -y
+
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -13,6 +16,7 @@ dotnet_csproj:
 
 before_build:
 - cmd: dotnet restore
+- ps: gitversion /l console /output buildserver /updateAssemblyInfo
 
 build:
   publish_nuget: true
