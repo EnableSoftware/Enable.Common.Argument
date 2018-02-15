@@ -1,4 +1,4 @@
-version: x-{build}
+version: {build}
 image: Visual Studio 2017
 configuration: Release
 
@@ -10,12 +10,11 @@ install:
   - choco install gitversion -pre -y
   - cmd: dotnet restore
   - ps: gitversion /l console /output buildserver
-  - ps: appveyor UpdateBuild -Version "$env:GitVersion_SemVer-$env:GitVersion_BuildMetaData"
 
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: $(GitVersion_NuGetVersion)
+  version: $(GitVersion_SemVer)
   assembly_version: $(GitVersion_MajorMinorPatch)
   informational_version: $(GitVersion_InformationalVersion)
 
