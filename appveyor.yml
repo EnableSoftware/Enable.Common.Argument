@@ -1,4 +1,4 @@
-version: 2.0.{build}
+version: x-{build}
 configuration: Release
 image: Visual Studio 2017
 
@@ -10,10 +10,9 @@ before_build:
 - cmd: dotnet restore
 - ps: gitversion /l console /output buildserver /updateAssemblyInfo
 
-build:
-  publish_nuget: true
-  parallel: true
-  verbosity: minimal
+
+build_script:
+  - dotnet pack -c %CONFIGURATION% --no-build --no-restore -p:Version=%GitVersion_MajorMinorPatch% -p:AssemblyVersion=%GitVersion_MajorMinorPatch%
 
 test:
   assemblies: '**\*.Tests.dll'
