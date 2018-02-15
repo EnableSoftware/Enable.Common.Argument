@@ -4,6 +4,8 @@
         <CodeAnalysisRuleSet>../../CustomExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
         <Features>IOperation</Features>
         <LangVersion>latest</LangVersion>
+        <AssemblyVersion></AssemblyVersion>
+        <InformationalVersion></InformationalVersion>
     </PropertyGroup>
     <PropertyGroup>
         <AssemblyName>Enable.Common.Argument.Tests</AssemblyName>

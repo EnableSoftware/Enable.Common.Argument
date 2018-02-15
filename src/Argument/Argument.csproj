@@ -2,12 +2,14 @@
     <PropertyGroup>
         <TargetFramework>netstandard1.0</TargetFramework>
         <CodeAnalysisRuleSet>../../CustomExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
-        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
         <Features>IOperation</Features>
         <LangVersion>latest</LangVersion>
+        <AssemblyVersion></AssemblyVersion>
+        <InformationalVersion></InformationalVersion>
     </PropertyGroup>
     <PropertyGroup>
         <AssemblyName>Enable.Common.Argument</AssemblyName>
+        <Version></Version>
         <Authors>Enable</Authors>
         <Description>Utility methods for .NET that centralise the logic for enforcing argument conditions at runtime.</Description>
         <Copyright>Copyright © Enable</Copyright>

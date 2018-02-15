@@ -16,9 +16,7 @@ dotnet_csproj:
   patch: true
   file: '**\*.csproj'
   version: $(GitVersion_NuGetVersion)
-  package_version: $(GitVersion_NuGetVersion)
   assembly_version: $(GitVersion_MajorMinorPatch)
-  file_version: $(GitVersion_MajorMinorPatch)
   informational_version: $(GitVersion_InformationalVersion)
 
 build:
