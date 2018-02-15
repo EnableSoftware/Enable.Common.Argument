@@ -1,21 +1,22 @@
 ﻿using System;
-using Ploeh.AutoFixture;
+using AutoFixture;
 using Xunit;
 
 namespace Enable.Common
 {
-    public class ArgumentIsNotNullTests
+    public class ArgumentIsInRangeTests
     {
         [Fact]
-        public void IsNotNull_DoesNotThrowIfArgumentNotNull()
+        public void IsInRange_DoesNotThrowIfConditionTrue()
         {
             // Arrange
-            object argument = new object();
+            var fixture = new Fixture();
+            var paramName = fixture.Create<string>();
 
             try
             {
                 // Act
-                Argument.IsNotNull(argument, nameof(argument));
+                Argument.IsInRange(true, paramName);
             }
             catch (Exception ex)
             {
@@ -25,34 +26,35 @@ namespace Enable.Common
         }
 
         [Fact]
-        public void IsNotNull_ThrowsIfArgumentIsNull()
+        public void IsInRange_ThrowsIfConditionFalse()
         {
             // Arrange
-            object argument = null;
+            var fixture = new Fixture();
+            var paramName = fixture.Create<string>();
 
             // Act
             var action = new Action(() =>
             {
-                Argument.IsNotNull(argument, nameof(argument));
+                Argument.IsInRange(false, paramName);
             });
 
             // Assert
-            Assert.Throws(typeof(ArgumentNullException), action);
+            Assert.Throws<ArgumentOutOfRangeException>(action);
         }
 
         [Fact]
-        public void IsNotNull_ThrowsWithExpectedMessage()
+        public void IsInRange_ThrowsWithExpectedMessage()
         {
             // Arrange
             var fixture = new Fixture();
             var argumentName = fixture.Create<string>();
-            var expectedMessage = "Value cannot be null." + Environment.NewLine + "Parameter name: " + argumentName;
+            var expectedMessage = "Specified argument was out of the range of valid values." + Environment.NewLine + "Parameter name: " + argumentName;
             Exception exception = null;
 
             // Act
             try
             {
-                Argument.IsNotNull(null, argumentName);
+                Argument.IsInRange(false, argumentName);
             }
             catch (Exception ex)
             {
