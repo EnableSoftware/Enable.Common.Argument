@@ -9,10 +9,12 @@ environment:
 before_build:
 - cmd: dotnet restore
 - ps: gitversion /l console /output buildserver /updateAssemblyInfo
+- ps: $env:APPVEYOR_BUILD_VERSION = %GitVersion_MajorMinorPatch%
 
-
-build_script:
-  - dotnet pack -c %CONFIGURATION% -p:Version=%GitVersion_MajorMinorPatch% -p:AssemblyVersion=%GitVersion_MajorMinorPatch%
+build:
+  publish_nuget: true
+  parallel: true
+  verbosity: minimal
 
 test:
   assemblies: '**\*.Tests.dll'
