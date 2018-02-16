@@ -7,7 +7,6 @@ environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
 install:
-  - choco install gitversion -pre -y
   - cmd: dotnet restore
   - ps: gitversion /l console /output buildserver
 
