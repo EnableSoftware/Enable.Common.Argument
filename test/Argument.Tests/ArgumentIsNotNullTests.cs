@@ -1,5 +1,5 @@
-﻿using System;
-using Ploeh.AutoFixture;
+using System;
+using AutoFixture;
 using Xunit;
 
 namespace Enable.Common
@@ -37,7 +37,7 @@ namespace Enable.Common
             });
 
             // Assert
-            Assert.Throws(typeof(ArgumentNullException), action);
+            Assert.Throws<ArgumentNullException>(action);
         }
 
         [Fact]

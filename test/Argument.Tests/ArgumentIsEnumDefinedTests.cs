@@ -1,5 +1,5 @@
-﻿using System;
-using Ploeh.AutoFixture;
+using System;
+using AutoFixture;
 using Xunit;
 
 namespace Enable.Common
@@ -57,7 +57,7 @@ namespace Enable.Common
             });
 
             // Assert
-            Assert.Throws(typeof(ArgumentOutOfRangeException), action);
+            Assert.Throws<ArgumentOutOfRangeException>(action);
         }
 
         [Fact]

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Enable.Common
 {
@@ -11,6 +11,8 @@ namespace Enable.Common
         /// <summary>
         /// Throws an exception if the enum value is not defined.
         /// </summary>
+        /// <param name="value">The value to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if value is not defined in Enum.</param>
         public static void IsEnumDefined(Enum value, string paramName)
         {
             if (value == null)
@@ -29,6 +31,8 @@ namespace Enable.Common
         /// <summary>
         /// Throws an exception if range predicate evaluates to false.
         /// </summary>
+        /// <param name="condition">The condition to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if condition is false.</param>
         public static void IsInRange(bool condition, string paramName)
         {
             if (!condition)
@@ -40,6 +44,8 @@ namespace Enable.Common
         /// <summary>
         /// Throws an exception if argument is null.
         /// </summary>
+        /// <param name="argument">The object to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if argument is null.</param>
         public static void IsNotNull(object argument, string paramName)
         {
             if (argument == null)
@@ -51,6 +57,8 @@ namespace Enable.Common
         /// <summary>
         /// Throws an exception if string argument is null or empty.
         /// </summary>
+        /// <param name="argument">The string to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if argument is null or empty.</param>
         public static void IsNotNullOrEmpty(string argument, string paramName)
         {
             if (argument == null)
@@ -67,6 +75,8 @@ namespace Enable.Common
         /// <summary>
         /// Throws an exception if string argument is null or whitespace.
         /// </summary>
+        /// <param name="argument">The string to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if argument is null or white space.</param>
         public static void IsNotNullOrWhiteSpace(string argument, string paramName)
         {
             if (argument == null)
@@ -90,10 +100,15 @@ namespace Enable.Common
             throw new ArgumentException("Value cannot be white space.", paramName);
         }
 
+#pragma warning disable CA1054 // Uri parameters should not be strings
+
         /// <summary>
         /// Throws an exception if the string argument is not a valid URI.
         /// </summary>
-        public static void IsWellFormedUriString(string uri, string argumentName, UriKind kind = UriKind.Absolute)
+        /// <param name="uri">The string to check.</param>
+        /// <param name="paramName">The name of the parameter, used in exception message if argument is not a well formed URI string.</param>
+        /// <param name="kind">The kind of URI to check, defaults to Absolute.</param>
+        public static void IsWellFormedUriString(string uri, string paramName, UriKind kind = UriKind.Absolute)
         {
             if (!Uri.IsWellFormedUriString(uri, kind))
             {
@@ -115,8 +130,10 @@ namespace Enable.Common
                         break;
                 }
 
-                throw new ArgumentException(message, argumentName);
+                throw new ArgumentException(message, paramName);
             }
         }
+
+#pragma warning restore CA1054 // Uri parameters should not be strings
     }
 }
