@@ -9,8 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9178269F-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A78E82A5-262D-4736-A4AF-CAEE12897981}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		appveyor.yml = appveyor.yml
-		CodeMaid.config = CodeMaid.config
 		CustomExtendedCorrectnessRules.ruleset = CustomExtendedCorrectnessRules.ruleset
 	EndProjectSection
 EndProject
