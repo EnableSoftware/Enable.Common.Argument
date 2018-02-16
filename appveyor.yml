@@ -22,7 +22,7 @@ build:
   parallel: true
   verbosity: minimal
 
-test:
-  assemblies: '**\*.Tests.dll'
+test_script:
+  - cmd: dotnet test test/Argument.Tests
 
 deploy: off
