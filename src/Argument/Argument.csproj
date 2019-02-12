@@ -19,7 +19,7 @@
         <RepositoryUrl>https://github.com/EnableSoftware/Enable.Common.Argument</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">
-        <PackageReference Include="Microsoft.NetCore.Analyzers" Version="2.6.0">
+        <PackageReference Include="Microsoft.NetCore.Analyzers" Version="2.6.3">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
