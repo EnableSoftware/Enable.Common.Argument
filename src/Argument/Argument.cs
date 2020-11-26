@@ -46,7 +46,7 @@ namespace Enable.Common
         /// </summary>
         /// <param name="argument">The object to check.</param>
         /// <param name="paramName">The name of the parameter, used in exception message if argument is null.</param>
-        public static void IsNotNull(object argument, string paramName)
+        public static void IsNotNull([ValidatedNotNull] object argument, string paramName)
         {
             if (argument == null)
             {
@@ -59,7 +59,7 @@ namespace Enable.Common
         /// </summary>
         /// <param name="argument">The string to check.</param>
         /// <param name="paramName">The name of the parameter, used in exception message if argument is null or empty.</param>
-        public static void IsNotNullOrEmpty(string argument, string paramName)
+        public static void IsNotNullOrEmpty([ValidatedNotNull] string argument, string paramName)
         {
             if (argument == null)
             {
@@ -77,7 +77,7 @@ namespace Enable.Common
         /// </summary>
         /// <param name="argument">The string to check.</param>
         /// <param name="paramName">The name of the parameter, used in exception message if argument is null or white space.</param>
-        public static void IsNotNullOrWhiteSpace(string argument, string paramName)
+        public static void IsNotNullOrWhiteSpace([ValidatedNotNull] string argument, string paramName)
         {
             if (argument == null)
             {
