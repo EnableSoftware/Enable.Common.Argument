@@ -15,7 +15,7 @@
         <Copyright>Copyright © Enable</Copyright>
         <PackageProjectUrl>https://github.com/EnableSoftware/Enable.Common.Argument</PackageProjectUrl>
         <PackageIconUrl>https://github.com/EnableSoftware.png</PackageIconUrl>
-        <PackageLicenseUrl>https://github.com/EnableSoftware/Enable.Common.Argument/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageLicenseUrl>https://github.com/EnableSoftware/Enable.Common.Argument/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/EnableSoftware/Enable.Common.Argument</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">
