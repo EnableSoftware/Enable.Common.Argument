@@ -6,4 +6,4 @@ Utility methods for .NET that centralise the logic for enforcing argument condit
 
 ## Usage
 
-Please [refer to the tests](https://github.com/EnableSoftware/Enable.Common.Argument/tree/master/test/Argument.Test) in this repository for sample usage.
+Please [refer to the tests](https://github.com/EnableSoftware/Enable.Common.Argument/tree/main/test/Argument.Test) in this repository for sample usage.
